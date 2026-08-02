@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI, Type } from '@google/genai';
 import dotenv from 'dotenv';
 
@@ -664,6 +663,7 @@ Mỗi câu hỏi trả về JSON gồm:
 // ================= VITE DEV / PRODUCTION MIDDLEWARE =================
 async function startServer() {
   if (process.env.NODE_ENV !== 'production') {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
@@ -682,4 +682,9 @@ async function startServer() {
   });
 }
 
-startServer();
+// Only start the server if not running in Vercel Serverless environment
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
