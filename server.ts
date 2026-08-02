@@ -77,7 +77,7 @@ Trả về duy nhất JSON đúng schema chỉ định:
 - collocations: mảng 2-4 cụm từ hay đi kèm (ví dụ: make an effort, heavy rain)
 - synonyms: mảng 2-4 từ đồng nghĩa
 - antonyms: mảng 2-4 từ trái nghĩa (nếu có)
-- idioms: mảng các thành ngữ/cụm từ liên quan kèm giải thích`
+- idioms: mảng các thành ngữ/cụm từ liên quan. Cấu trúc mỗi phần tử: { "idiom": "thành ngữ", "meaning": "ý nghĩa" }`
       : `Bạn là từ điển Việt-Anh thông minh dành cho người học tiếng Anh Việt Nam (Ms Lý AI - Fly High).
 Hãy chuyển từ/cụm từ tiếng Việt: "${word}" sang từ/cụm từ tiếng Anh tương ứng chuẩn xác nhất.
 Trả về duy nhất JSON đúng schema chỉ định:
@@ -90,7 +90,7 @@ Trả về duy nhất JSON đúng schema chỉ định:
 - collocations: mảng cụm từ đi kèm tiếng Anh
 - synonyms: mảng từ đồng nghĩa tiếng Anh
 - antonyms: mảng từ trái nghĩa tiếng Anh
-- idioms: thành ngữ liên quan`;
+- idioms: mảng các thành ngữ liên quan. Cấu trúc mỗi phần tử: { "idiom": "thành ngữ", "meaning": "ý nghĩa" }`;
 
     const response = await generateContentWithFallback(prompt, {
       type: Type.OBJECT,
