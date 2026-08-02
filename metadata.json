@@ -1,0 +1,6 @@
+{
+  "name": "Fly High Dictionary - Ms Lý AI",
+  "description": "Từ điển đa năng Anh-Việt, luyện viết sửa lỗi ngữ pháp AI, chấm điểm phát âm ghi âm chuẩn bản xứ và hệ thống nhắc nhở học tập thông minh mỗi ngày.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
